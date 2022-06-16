@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="https://ssl.pstatic.net/happyimg2/img3/event/campaign/common/js/hbean_event.js"></script>
+	<script src="https://ssl.pstatic.net/happyimg2/img3/event/campaign/common/js/hbean_api.2.0.min.js"></script>
+	<script src="https://ssl.pstatic.net/happyimg2/img3/event/campaign/swiper-4.5.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://www.youtube.com/player_api"></script>
+</head>
+<body>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+
+    <style>
+        body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+        html,body,input,textarea,select,button,table{font-family:'Noto Sans KR','나눔고딕','돋움',Dotum,AppleGothic,sans-serif} 
+        img,fieldset{border:0}
+        ul,ol{list-style:none}
+        em,address{font-style:normal}
+        a{text-decoration:none}
+        a:hover,a:active,a:focus{text-decoration:none}
+        input[type=text]::-ms-clear{display:none}
+        .blind{display:block;width:0;height:0;margin:0;padding:0;line-height:0;font-size:0;overflow:hidden}
+        .swiper-container{margin-left:auto;margin-right:auto;position:relative;overflow:hidden;list-style:none;padding:0;z-index:1}.swiper-container-no-flexbox .swiper-slide{float:left}.swiper-container-vertical>.swiper-wrapper{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.swiper-wrapper{position:relative;width:100%;height:100%;z-index:1;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-transition-property:-webkit-transform;transition-property:-webkit-transform;-o-transition-property:transform;transition-property:transform;transition-property:transform,-webkit-transform;-webkit-box-sizing:content-box;box-sizing:content-box}.swiper-container-android .swiper-slide,.swiper-wrapper{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}.swiper-container-multirow>.swiper-wrapper{-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}.swiper-container-free-mode>.swiper-wrapper{-webkit-transition-timing-function:ease-out;-o-transition-timing-function:ease-out;transition-timing-function:ease-out;margin:0 auto}.swiper-slide{-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;width:100%;height:100%;position:relative;-webkit-transition-property:-webkit-transform;transition-property:-webkit-transform;-o-transition-property:transform;transition-property:transform;transition-property:transform,-webkit-transform}.swiper-slide-invisible-blank{visibility:hidden}.swiper-container-autoheight,.swiper-container-autoheight .swiper-slide{height:auto}.swiper-container-autoheight .swiper-wrapper{-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start;-webkit-transition-property:height,-webkit-transform;transition-property:height,-webkit-transform;-o-transition-property:transform,height;transition-property:transform,height;transition-property:transform,height,-webkit-transform}.swiper-container-3d{-webkit-perspective:1200px;perspective:1200px}.swiper-container-3d .swiper-cube-shadow,.swiper-container-3d .swiper-slide,.swiper-container-3d .swiper-slide-shadow-bottom,.swiper-container-3d .swiper-slide-shadow-left,.swiper-container-3d .swiper-slide-shadow-right,.swiper-container-3d .swiper-slide-shadow-top,.swiper-container-3d .swiper-wrapper{-webkit-transform-style:preserve-3d;transform-style:preserve-3d}.swiper-container-3d .swiper-slide-shadow-bottom,.swiper-container-3d .swiper-slide-shadow-left,.swiper-container-3d .swiper-slide-shadow-right,.swiper-container-3d .swiper-slide-shadow-top{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:10}.swiper-container-3d .swiper-slide-shadow-left{background-image:-webkit-gradient(linear,right top,left top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,0)));background-image:-webkit-linear-gradient(right,rgba(0,0,0,.5),rgba(0,0,0,0));background-image:-o-linear-gradient(right,rgba(0,0,0,.5),rgba(0,0,0,0));background-image:linear-gradient(to left,rgba(0,0,0,.5),rgba(0,0,0,0))}.swiper-container-3d .swiper-slide-shadow-right{background-image:-webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,0)));background-image:-webkit-linear-gradient(left,rgba(0,0,0,.5),rgba(0,0,0,0));background-image:-o-linear-gradient(left,rgba(0,0,0,.5),rgba(0,0,0,0));background-image:linear-gradient(to right,rgba(0,0,0,.5),rgba(0,0,0,0))}.swiper-container-3d .swiper-slide-shadow-top{background-image:-webkit-gradient(linear,left bottom,left top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,0)));background-image:-webkit-linear-gradient(bottom,rgba(0,0,0,.5),rgba(0,0,0,0));background-image:-o-linear-gradient(bottom,rgba(0,0,0,.5),rgba(0,0,0,0));background-image:linear-gradient(to top,rgba(0,0,0,.5),rgba(0,0,0,0))}.swiper-container-3d .swiper-slide-shadow-bottom{background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.5)),to(rgba(0,0,0,0)));background-image:-webkit-linear-gradient(top,rgba(0,0,0,.5),rgba(0,0,0,0));background-image:-o-linear-gradient(top,rgba(0,0,0,.5),rgba(0,0,0,0));background-image:linear-gradient(to bottom,rgba(0,0,0,.5),rgba(0,0,0,0))}.swiper-container-wp8-horizontal,.swiper-container-wp8-horizontal>.swiper-wrapper{-ms-touch-action:pan-y;touch-action:pan-y}.swiper-container-wp8-vertical,.swiper-container-wp8-vertical>.swiper-wrapper{-ms-touch-action:pan-x;touch-action:pan-x}.swiper-button-next,.swiper-button-prev{position:absolute;top:50%;width:27px;height:44px;margin-top:-22px;z-index:10;cursor:pointer;background-size:27px 44px;background-position:center;background-repeat:no-repeat}.swiper-button-next.swiper-button-disabled,.swiper-button-prev.swiper-button-disabled{opacity:.35;cursor:auto;pointer-events:none}.swiper-button-prev,.swiper-container-rtl .swiper-button-next{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");left:10px;right:auto}.swiper-button-next,.swiper-container-rtl .swiper-button-prev{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");right:10px;left:auto}.swiper-button-prev.swiper-button-white,.swiper-container-rtl .swiper-button-next.swiper-button-white{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E")}.swiper-button-next.swiper-button-white,.swiper-container-rtl .swiper-button-prev.swiper-button-white{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E")}.swiper-button-prev.swiper-button-black,.swiper-container-rtl .swiper-button-next.swiper-button-black{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E")}.swiper-button-next.swiper-button-black,.swiper-container-rtl .swiper-button-prev.swiper-button-black{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E")}.swiper-button-lock{display:none}.swiper-pagination{position:absolute;text-align:center;-webkit-transition:.3s opacity;-o-transition:.3s opacity;transition:.3s opacity;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);z-index:10}.swiper-pagination.swiper-pagination-hidden{opacity:0}.swiper-container-horizontal>.swiper-pagination-bullets,.swiper-pagination-custom,.swiper-pagination-fraction{bottom:10px;left:0;width:100%}.swiper-pagination-bullets-dynamic{overflow:hidden;font-size:0}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{-webkit-transform:scale(.33);-ms-transform:scale(.33);transform:scale(.33);position:relative}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-main{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev{-webkit-transform:scale(.66);-ms-transform:scale(.66);transform:scale(.66)}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev{-webkit-transform:scale(.33);-ms-transform:scale(.33);transform:scale(.33)}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next{-webkit-transform:scale(.66);-ms-transform:scale(.66);transform:scale(.66)}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next{-webkit-transform:scale(.33);-ms-transform:scale(.33);transform:scale(.33)}.swiper-pagination-bullet{width:8px;height:8px;display:inline-block;border-radius:100%;background:#000;opacity:.2}button.swiper-pagination-bullet{border:none;margin:0;padding:0;-webkit-box-shadow:none;box-shadow:none;-webkit-appearance:none;-moz-appearance:none;appearance:none}.swiper-pagination-clickable .swiper-pagination-bullet{cursor:pointer}.swiper-pagination-bullet-active{opacity:1;background:#007aff}.swiper-container-vertical>.swiper-pagination-bullets{right:10px;top:50%;-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0)}.swiper-container-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{margin:6px 0;display:block}.swiper-container-vertical>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic{top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);width:8px}.swiper-container-vertical>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{display:inline-block;-webkit-transition:.2s top,.2s -webkit-transform;transition:.2s top,.2s -webkit-transform;-o-transition:.2s transform,.2s top;transition:.2s transform,.2s top;transition:.2s transform,.2s top,.2s -webkit-transform}.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{margin:0 4px}.swiper-container-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic{left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);white-space:nowrap}.swiper-container-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{-webkit-transition:.2s left,.2s -webkit-transform;transition:.2s left,.2s -webkit-transform;-o-transition:.2s transform,.2s left;transition:.2s transform,.2s left;transition:.2s transform,.2s left,.2s -webkit-transform}.swiper-container-horizontal.swiper-container-rtl>.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{-webkit-transition:.2s right,.2s -webkit-transform;transition:.2s right,.2s -webkit-transform;-o-transition:.2s transform,.2s right;transition:.2s transform,.2s right;transition:.2s transform,.2s right,.2s -webkit-transform}.swiper-pagination-progressbar{background:rgba(0,0,0,.25);position:absolute}.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{background:#007aff;position:absolute;left:0;top:0;width:100%;height:100%;-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);-webkit-transform-origin:left top;-ms-transform-origin:left top;transform-origin:left top}.swiper-container-rtl .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{-webkit-transform-origin:right top;-ms-transform-origin:right top;transform-origin:right top}.swiper-container-horizontal>.swiper-pagination-progressbar,.swiper-container-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite{width:100%;height:4px;left:0;top:0}.swiper-container-horizontal>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,.swiper-container-vertical>.swiper-pagination-progressbar{width:4px;height:100%;left:0;top:0}.swiper-pagination-white .swiper-pagination-bullet-active{background-color:#fff}.swiper-pagination-progressbar.swiper-pagination-white{background:rgba(255,255,255,.25)}.swiper-pagination-progressbar.swiper-pagination-white .swiper-pagination-progressbar-fill{background-color:#fff}.swiper-pagination-black .swiper-pagination-bullet-active{background:#000}.swiper-pagination-progressbar.swiper-pagination-black{background:rgba(0,0,0,.25)}.swiper-pagination-progressbar.swiper-pagination-black .swiper-pagination-progressbar-fill{background:#000}.swiper-pagination-lock{display:none}.swiper-scrollbar{border-radius:10px;position:relative;-ms-touch-action:none;background:rgba(0,0,0,.1)}.swiper-container-horizontal>.swiper-scrollbar{position:absolute;left:1%;bottom:3px;z-index:50;height:5px;width:98%}.swiper-container-vertical>.swiper-scrollbar{position:absolute;right:3px;top:1%;z-index:50;width:5px;height:98%}.swiper-scrollbar-drag{height:100%;width:100%;position:relative;background:rgba(0,0,0,.5);border-radius:10px;left:0;top:0}.swiper-scrollbar-cursor-drag{cursor:move}.swiper-scrollbar-lock{display:none}.swiper-zoom-container{width:100%;height:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;text-align:center}.swiper-zoom-container>canvas,.swiper-zoom-container>img,.swiper-zoom-container>svg{max-width:100%;max-height:100%;-o-object-fit:contain;object-fit:contain}.swiper-slide-zoomed{cursor:move}.swiper-lazy-preloader{width:42px;height:42px;position:absolute;left:50%;top:50%;margin-left:-21px;margin-top:-21px;z-index:10;-webkit-transform-origin:50%;-ms-transform-origin:50%;transform-origin:50%;-webkit-animation:swiper-preloader-spin 1s steps(12,end) infinite;animation:swiper-preloader-spin 1s steps(12,end) infinite}.swiper-lazy-preloader:after{display:block;content:'';width:100%;height:100%;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg%20viewBox%3D'0%200%20120%20120'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20xmlns%3Axlink%3D'http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink'%3E%3Cdefs%3E%3Cline%20id%3D'l'%20x1%3D'60'%20x2%3D'60'%20y1%3D'7'%20y2%3D'27'%20stroke%3D'%236c6c6c'%20stroke-width%3D'11'%20stroke-linecap%3D'round'%2F%3E%3C%2Fdefs%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(30%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(60%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(90%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(120%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(150%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.37'%20transform%3D'rotate(180%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.46'%20transform%3D'rotate(210%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.56'%20transform%3D'rotate(240%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.66'%20transform%3D'rotate(270%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.75'%20transform%3D'rotate(300%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.85'%20transform%3D'rotate(330%2060%2C60)'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");background-position:50%;background-size:100%;background-repeat:no-repeat}.swiper-lazy-preloader-white:after{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg%20viewBox%3D'0%200%20120%20120'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20xmlns%3Axlink%3D'http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink'%3E%3Cdefs%3E%3Cline%20id%3D'l'%20x1%3D'60'%20x2%3D'60'%20y1%3D'7'%20y2%3D'27'%20stroke%3D'%23fff'%20stroke-width%3D'11'%20stroke-linecap%3D'round'%2F%3E%3C%2Fdefs%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(30%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(60%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(90%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(120%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(150%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.37'%20transform%3D'rotate(180%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.46'%20transform%3D'rotate(210%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.56'%20transform%3D'rotate(240%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.66'%20transform%3D'rotate(270%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.75'%20transform%3D'rotate(300%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.85'%20transform%3D'rotate(330%2060%2C60)'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")}@-webkit-keyframes swiper-preloader-spin{100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes swiper-preloader-spin{100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.swiper-container .swiper-notification{position:absolute;left:0;top:0;pointer-events:none;opacity:0;z-index:-1000}.swiper-container-fade.swiper-container-free-mode .swiper-slide{-webkit-transition-timing-function:ease-out;-o-transition-timing-function:ease-out;transition-timing-function:ease-out}.swiper-container-fade .swiper-slide{pointer-events:none;-webkit-transition-property:opacity;-o-transition-property:opacity;transition-property:opacity}.swiper-container-fade .swiper-slide .swiper-slide{pointer-events:none}.swiper-container-fade .swiper-slide-active,.swiper-container-fade .swiper-slide-active .swiper-slide-active{pointer-events:auto}.swiper-container-cube{overflow:visible}.swiper-container-cube .swiper-slide{pointer-events:none;-webkit-backface-visibility:hidden;backface-visibility:hidden;z-index:1;visibility:hidden;-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;width:100%;height:100%}.swiper-container-cube .swiper-slide .swiper-slide{pointer-events:none}.swiper-container-cube.swiper-container-rtl .swiper-slide{-webkit-transform-origin:100% 0;-ms-transform-origin:100% 0;transform-origin:100% 0}.swiper-container-cube .swiper-slide-active,.swiper-container-cube .swiper-slide-active .swiper-slide-active{pointer-events:auto}.swiper-container-cube .swiper-slide-active,.swiper-container-cube .swiper-slide-next,.swiper-container-cube .swiper-slide-next+.swiper-slide,.swiper-container-cube .swiper-slide-prev{pointer-events:auto;visibility:visible}.swiper-container-cube .swiper-slide-shadow-bottom,.swiper-container-cube .swiper-slide-shadow-left,.swiper-container-cube .swiper-slide-shadow-right,.swiper-container-cube .swiper-slide-shadow-top{z-index:0;-webkit-backface-visibility:hidden;backface-visibility:hidden}.swiper-container-cube .swiper-cube-shadow{position:absolute;left:0;bottom:0;width:100%;height:100%;background:#000;opacity:.6;-webkit-filter:blur(50px);filter:blur(50px);z-index:0}.swiper-container-flip{overflow:visible}.swiper-container-flip .swiper-slide{pointer-events:none;-webkit-backface-visibility:hidden;backface-visibility:hidden;z-index:1}.swiper-container-flip .swiper-slide .swiper-slide{pointer-events:none}.swiper-container-flip .swiper-slide-active,.swiper-container-flip .swiper-slide-active .swiper-slide-active{pointer-events:auto}.swiper-container-flip .swiper-slide-shadow-bottom,.swiper-container-flip .swiper-slide-shadow-left,.swiper-container-flip .swiper-slide-shadow-right,.swiper-container-flip .swiper-slide-shadow-top{z-index:0;-webkit-backface-visibility:hidden;backface-visibility:hidden}.swiper-container-coverflow .swiper-wrapper{-ms-perspective:1200px}.jq_band_api img{display:none}
+        .jq_band_api img{display:none}
+        button{outline:none}
+        
+        /* wing */
+        #wing { width: 151px;height: 139px;background: url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/wing02.png) 0 0 no-repeat;position: fixed;right: calc(16% - 60px);top: 94px;z-index: 98;} 
+        #wing .count { width: 100%;text-align: right;position: absolute;left: 0;color: #444;} 
+        #wing .count strong { display: inline-block;margin: 0px 53px 0 0;font-family: Tahoma;font-size: 20px;color: #000;font-weight: 700;letter-spacing: -0.03em;position: relative;top: 90px;} 
+        #wing .person { width: 100%;text-align: center;position: absolute;left: 32px;color: #444;}
+        #wing .person strong { display: inline-block;margin: 0 20px 0 0;font-family: Tahoma;font-size: 20px;color: #000;font-weight: 700;letter-spacing: -0.03em;position: relative;top: 90px;left: 11px;}  
+
+        #campaign_wrap{position:relative;font-family:'Noto Sans KR';line-height:1.5;}
+
+        .greener_wrap {position:relative;min-width:1200px;height:auto !important;overflow:visible !important;}
+
+        /* section1 */
+        .greener_wrap .sec1 {width:100%;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec1_bg01_main.png) center top no-repeat #e8fafe}
+        .greener_wrap .sec1 .inner_box{width:1000px;height:1315px;margin:0 auto;position:relative;overflow:hidden;}
+        .greener_wrap .sec1 .logo a{display:block;width:200px;height:50px;position:absolute;left:-60px;top:48px;background:transparent}
+        .greener_wrap .sec1 .video_box{position:absolute;width:738px;height:415px;left:131px;top:586px;overflow:hidden}
+        .greener_wrap .sec1 .btn_getbean {position:relative;display:block;margin:1080px auto 0;width:416px;height:79px;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/yt_been02_default.png) center top no-repeat;background-size:100% auto;overflow:hidden;}
+        .greener_wrap .sec1 .btn_getbean[activated] {background-position:center bottom;}
+
+    
+        /* section2 */
+        .greener_wrap .sec2 {width:100%;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec2_bg02_type1.png) center top no-repeat #fff2f9}
+        .greener_wrap .sec2 .inner_box {width:740px;height:1107px;margin:0 auto;position:relative;display:flex;justify-content: center;overflow: hidden;}
+        .greener_wrap .sec2 .inner_box .option_box {display: flex;width: 490px;height: 427px;position: absolute;top: 480px;justify-content: space-between;}
+        .greener_wrap .sec2 .inner_box .option_box .sustainable {width:151px;height: 278px; cursor: pointer;}
+        .greener_wrap .sec2 .inner_box .option_box .sustainable .sustainable_off {display: block; width:100%; height: 100%; cursor: pointer;}
+        .greener_wrap .sec2 .inner_box .option_box .sustainable .sustainable_on {display: none; width:100%; height: 100%; cursor: pointer;}
+        .greener_wrap .sec2 .inner_box .option_box .forest {width:151px;height: 278px;cursor: pointer;}
+        .greener_wrap .sec2 .inner_box .option_box .forest .forest_off {display: block; width:100%; height: 100%; cursor: pointer;}
+        .greener_wrap .sec2 .inner_box .option_box .forest .forest_on {display: none; width:100%; height: 100%; cursor: pointer;}
+        .greener_wrap .sec2 .inner_box .option_box .together {width:151px;height: 278px;cursor: pointer;}
+        .greener_wrap .sec2 .inner_box .option_box .together .together_off {display: block; width:100%; height: 100%; cursor: pointer;}
+        .greener_wrap .sec2 .inner_box .option_box .together .together_on {display: none; width:100%; height: 100%; cursor: pointer;}
+        .greener_wrap .sec2 .btn_getbean {position:relative;display:block;margin:835px auto 0;width:416px;height:79px;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/contents_been02_default.png) center top no-repeat;background-size:100% auto;overflow:hidden;}
+        .greener_wrap .sec2 .btn_getbean[activated] {background-position:center bottom;}
+
+        #sec2_popup {display:none;position:fixed;top:0;width:100%;height:100%;background-color: rgba(15,15,15,0.3);z-index:100;}
+        #sec2_popup .sec2_popup_contents {display:flex;justify-content:center;position:relative;margin: 270px auto;width:760px;height:446px;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sustainable_confirm.png) center top no-repeat;}
+        #sec2_popup .sec2_popup_contents .confirm_btn {position:absolute;cursor:pointer;bottom:45px;width:139px;height:59px;background: url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec2_comfirm_btn.png) center top no-repeat;}
+
+    
+        /* section3 */
+        .greener_wrap .sec3 {width:100%;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec3_bg_main.png) center top no-repeat #dff4ed}
+        .greener_wrap .sec3 .inner_box{width:765px;height:1138px;margin:0 auto;position:relative;overflow: hidden;}
+        .greener_wrap .sec3 .inner_box .option_box {display:flex; justify-content: center; width: 100%; height: 251px; position:absolute;top:538px;}
+        .greener_wrap .sec3 .inner_box .option_box .reduce {width:100%;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/reduce.png) center top no-repeat; cursor: pointer;}
+        .greener_wrap .sec3 .inner_box .option_box .reduce .arrow {display: block; position:absolute;top:75px;left:220px;width:42px;height:46px;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/arrow.png) no-repeat;background-size:100% auto;-webkit-animation:arrow 1.4s linear infinite;animation:arrow 1.4s linear infinite;}
+        .greener_wrap .sec3 .inner_box .option_box .recycle {width:100%;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/recycle.png) center top no-repeat; cursor: pointer;}
+        .greener_wrap .sec3 .inner_box .option_box .recycle .arrow {display: block;position:absolute;top:75px;left:473px;width:42px;height:46px;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/arrow.png) no-repeat;background-size:100% auto;-webkit-animation:arrow 1.4s linear infinite;animation:arrow 1.4s linear infinite;}
+        .greener_wrap .sec3 .inner_box .option_box .replace {width:100%;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/replace.png) center top no-repeat; cursor: pointer;}
+        .greener_wrap .sec3 .inner_box .option_box .replace .arrow {display: block;position:absolute;top:75px;left:720px;width:42px;height:46px;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/arrow.png) no-repeat;background-size:100% auto;-webkit-animation:arrow 1.4s linear infinite;animation:arrow 1.4s linear infinite;}
+        .greener_wrap .sec3 .btn_getbean {position:relative;display:block;margin:950px auto 0;width:416px;height:79px;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/vote_been03_default.png) center top no-repeat;background-size:100% auto;overflow:hidden;}
+        .greener_wrap .sec3 .btn_getbean[activated] {background-position:center bottom;}
+        @keyframes arrow {
+            0% {transform:scale(1) translateY(0) translateX(0);}
+            50% {transform:scale(1.1) translateY(4px) translateX(2px);}
+            100% {transform:scale(1) translateY(0) translateX(0);}
+        }
+
+        #sec3_popup {display:none;position: fixed;top: 0;width: 100%;height: 100%;background-color: rgba(15,15,15,0.3);z-index: 100;flex-direction: column;justify-content: center;align-items: center;}
+        #sec3_popup .sec3_popup_contents {display:flex;justify-content:center;position:relative;margin:196px auto;width:1020px;height:584px;}
+        #sec3_popup .sec3_popup_contents .reduce {display: none; width: 100%; height: 100%;}
+        #sec3_popup .sec3_popup_contents .recycle {display: none; width: 100%; height: 100%;}
+        #sec3_popup .sec3_popup_contents .replace {display: none; width: 100%; height: 100%;}
+        #sec3_popup .sec3_popup_contents .confirm_btn {position:absolute;cursor:pointer;bottom:45px;width:271px;height:47px;background: url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec3_comfirm_btn.png) center top no-repeat;}
+
+        .greener_wrap .sec3 .inner_box .vote_wrap {display:flex; justify-content: space-around; width: 100%; height: 30px; position:absolute;top:800px;}
+        .greener_wrap .sec3 .inner_box .vote_wrap .vote_check {display: none;}
+        .greener_wrap .sec3 .inner_box .vote_wrap .vote_check:checked + .vote_title::before {content:'';display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;margin-bottom:25px;width:51px;height:48px;position:absolute;top:-15px;cursor:pointer;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/checkbox_vote_on.png) no-repeat;}
+        .greener_wrap .sec3 .inner_box .vote_wrap .vote_title {display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
+        .greener_wrap .sec3 .inner_box .vote_wrap .vote_title::before {content: '';display: -webkit-inline-box;display: -ms-inline-flexbox;display: inline-flex;margin-bottom: 25px;width: 32px;height: 32px;background: url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/checkbox_vote.png) no-repeat;cursor: pointer;}
+        .greener_wrap .sec3 .inner_box .vote_wrap .vote_title .title_txt {display: -webkit-inline-box;display: -ms-inline-flexbox;display: inline-flex;width: 239px;height: 40px;}
+        .greener_wrap .sec3 .inner_box .vote_select_text {width: 100%;height: 64px;display: flex;justify-content: center;align-items: center;position: absolute;top: 850px;}
+        .greener_wrap .sec3 .inner_box .vote_select_text .vote_title{font-size: 28px;font-weight: bold;line-height: 0.93;color: #41d279;}
+        .greener_wrap .sec3 .inner_box .vote_select_text .graph_wrap {display: block;position: relative;overflow: hidden;height: 80px;width: 100%;}
+        .greener_wrap .sec3 .inner_box .vote_select_text .graph_wrap .graph_list {display: flex;justify-content: space-around;align-items: flex-end;box-sizing: border-box;-webkit-box-sizing: border-box;width: 100%;height: 100%;}
+        .greener_wrap .sec3 .inner_box .vote_select_text .graph_wrap .graph_list .column {position: relative;flex: 1 1 auto;-webkit-box-flex: 1;-ms-flex: 1 1 auto;width: 70px;display: flex;justify-content: center;}
+        .greener_wrap .sec3 .inner_box .vote_select_text .graph_wrap .graph_list .column .graph_bg {z-index: 10;width: 90%;border: solid 2px #0f0f0f;}
+        .greener_wrap .sec3 .inner_box .vote_select_text .graph_wrap .graph_list .column .graph_bg .graph_desc {z-index: 10;max-width: 90%;}
+        .greener_wrap .sec3 .inner_box .vote_select_text .graph_wrap .graph_list .column .graph_bg .graph_desc::after {content: '';display: block;margin: 0 auto;width: 100%;height: 23px;background-color: #41D279;box-sizing: border-box;-webkit-box-sizing: border-box;}
+        .greener_wrap .sec3 .inner_box .vote_select_text .graph_wrap .graph_list .column .num {position: absolute;left: 50%;top: -40px;font-size: 28px;font-weight: bold;line-height: 0.93;text-align: center;color: #0f0f0f;-ms-transform: translateX(-50%);transform: translateX(-50%);-webkit-transform: translateX(-50%);}
+
+
+        /* section4 */
+        .greener_wrap .sec4 {width:100%;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec4_bg_main.png) center top no-repeat #fffde6}
+        .greener_wrap .sec4 .inner_box {width:1200px;height:1076px;margin:0 auto;position:relative;overflow: hidden; display: flex; justify-content: center;}
+        .greener_wrap .sec4 .swiper_wrap { width:1000px;position:absolute;left:95px;top:526px } 
+        .greener_wrap .sec4 .swiper_wrap .swiper-container .img_01 { width: 252px; height: 327px; background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec4_product_01.png) 0 0 no-repeat }  
+        .greener_wrap .sec4 .swiper_wrap .swiper-container .img_02 { width: 252px; height: 327px; background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec4_product_02.png) 0 0 no-repeat}  
+        .greener_wrap .sec4 .swiper_wrap .swiper-container .img_03 { width: 252px; height: 327px; background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec4_product_03.png) 0 0 no-repeat}  
+        .greener_wrap .sec4 .swiper_wrap .swiper-container .img_04 { width: 252px; height: 327px; background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec4_product_04.png) 0 0 no-repeat}  
+        .greener_wrap .sec4 .swiper_wrap .swiper-container .img_05 { width: 252px; height: 327px; background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec4_product_05.png) 0 0 no-repeat}  
+        .greener_wrap .sec4 .swiper_wrap .swiper-container .img_06 { width: 252px; height: 327px; background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec4_product_06.png) 0 0 no-repeat}  
+        .greener_wrap .sec4 .swiper_wrap .swiper-container .img_07 { width: 252px; height: 327px; background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec4_product_07.png) 0 0 no-repeat}  
+        .greener_wrap .sec4 .swiper_wrap .control button { width:31px;height:51px;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sprite_01.png) 0 0 no-repeat;position:absolute;top:140px;z-index:1 } 
+        .greener_wrap .sec4 .swiper_wrap .btn_prev { left:-50px;background-position:0 -289px!important } 
+        .greener_wrap .sec4 .swiper_wrap .btn_next { right:-50px;background-position:-31px -289px!important } 
+        .greener_wrap .sec4 .swiper_wrap .btn_prev.swiper-button-disabled { background-position:0 -238px!important } 
+        .greener_wrap .sec4 .swiper_wrap .btn_next.swiper-button-disabled { background-position:-31px -238px!important } 
+        .greener_wrap .sec4 .swiper_wrap .swiper-pagination { width:100%;bottom:-30px } 
+        .greener_wrap .sec4 .swiper_wrap .swiper-pagination-bullet { width:17px;height:17px;margin:0 5px;border-radius:17px;background-color:#bababa;transition:all .3s;opacity:1 } 
+        .greener_wrap .sec4 .swiper_wrap .swiper-pagination-bullet-active { background-color:#37af4b } 
+        .greener_wrap .sec4 .inner_box .greener_bg_btn {background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/greener_product01_btn.png) center top no-repeat;width: 542px;height: 94px;position: relative;top: 950px;}
+        .greener_wrap .sec4 .inner_box .greener_bg_btn a {display: block;width: 100%;height: 100%;}
+
+        /* section5 */
+        .greener_wrap .sec5 {width:100%;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec5_bg03_main.png) center top no-repeat #fffde6;}
+        .greener_wrap .sec5 .inner_box {width:100%;height:689px;margin:0 auto;position:relative;overflow: hidden;}
+        .greener_wrap .sec5 .inner_box:hover {background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec5_bg04_main_on.png) center top no-repeat #fffde6;}
+        .greener_wrap .sec5 .inner_box a {display: block; width: 100%; height: 100%;}
+        .greener_wrap .sec5 .inner_box .arrow {display: block;position: absolute;top: 475px;left: 1266px;width: 42px;height: 46px;background: url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/arrow.png) no-repeat;background-size: 100% auto;-webkit-animation: arrow 1.4s linear infinite;animation: arrow 1.4s linear infinite;}
+
+        /* section6 */
+        /* .greener_wrap .sec6 {width:100%;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec6_bg_main.png) center top no-repeat #fffde6}
+        .greener_wrap .sec6 .inner_box{width:1000px;height:827px;margin:0 auto;position:relative;overflow: hidden;} */
+
+        /* section7 */
+        .greener_wrap .sec7 {width:100%;background:#fff2f9}
+        .greener_wrap .sec7 .inner_box{width:100%;height:auto;margin:0 auto;position:relative;overflow: hidden;}
+        .greener_wrap .sec7 .inner_box .live_broad {font-size:0;text-align:center;}
+        .greener_wrap .sec7 .inner_box .live_broad li {display: inline-block;color: #000;text-align: center;width: 33%;max-height: 249px;min-height: 145px;margin-right: 5px;}     
+        .greener_wrap .sec7 .inner_box .live_broad li:last-child {margin-right: 0px;}
+    
+        .greener_wrap .sec7 .inner_box .live_broad li a {display:inline-block; width: 100%;height: 100%;}
+        .greener_wrap .sec7 .inner_box .live_broad li a img {width: 100%;height: 100%;}
+
+        /* section contents */
+        #section_contents {width:100%;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec_bg_contents.png) center top no-repeat #fffde6}
+        #section_contents .inner_box {width:1000px;height:381px;margin:0 auto;position:relative;overflow: hidden;}
+        #section_contents .service {margin-top:193px;font-size:0;text-align:center;}
+        #section_contents .service li {display:inline-block;margin:0 27px;font-size:20px;color:#000;line-height:27px;text-align:center;}
+        #section_contents .service li a {display:inline-block;width:128px;padding-top:138px;}
+        #section_contents .service li a.btn_service_yk {width: 111px;cursor: pointer;background: url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/contents.png) no-repeat;background-position: 0px 0px;}
+        #section_contents .service li a.btn_service_ig {width: 111px;cursor: pointer;background: url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/contents.png) no-repeat;background-position: -171px 0px;}
+        #section_contents .service li a.btn_service_fb {width: 111px;cursor: pointer;background: url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/contents.png) no-repeat;background-position: -326px 0px;}
+        #section_contents .service li a.btn_service_yt {width: 111px;cursor: pointer;background: url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/contents.png) no-repeat;background-position: -482px 0px;}
+        #section_contents .service li a.btn_service_nb {width: 111px;cursor: pointer;background: url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/contents.png) no-repeat;background-position: -635px 0px;}
+
+
+        /* section sns */
+        #section_sns {width:100%;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec_bg01_sns.png) center top no-repeat #fffde6}
+        #section_sns .inner_box {width:1000px;height:121px;margin:0 auto;position:relative}
+        #section_sns .share{position:absolute;left:100px;top:25px;overflow:hidden}
+        #section_sns .share li{width:69px;height:69px;float:left;margin-left:23px;cursor:pointer;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sprite_01.png) no-repeat}
+        #section_sns .share li a{display:block;width:69px;height:69px}
+        #section_sns .share li:first-child{margin-left:0}
+        #section_sns .share .btn_band{background-position:0 -169px}
+        #section_sns .share .btn_twitter{background-position:-69px -169px}
+        #section_sns .share .btn_facebook{background-position:-138px -169px}
+        #section_sns .share .btn_kakaostory{background-position:-207px -169px} 
+
+        /* section comment */
+        #section_comment {width:100%;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec_bg_comment.png) center top no-repeat #fffde6}
+        #section_comment .inner_box {width:1000px;height:436px;margin:0 auto;position:relative}
+
+        
+        /* pupup */
+        #popup_all > div{display:table;width:100%;height:100%;position:fixed;left:0px;top:0px;z-index:150}
+        #popup_all .bg{width:100%;height:100%;position:absolute;left:0px;top:0px;background-color:#000;filter:alpha(opacity=70);opacity:0.9}
+        #popup_all .out_layer_box{display:table-cell;text-align:center;vertical-align:middle}
+        #popup_all .in_layer_box{display:inline-block;width:760px;height:446px;position:relative;z-index:10}
+        #popup_all .btn_close{display:inline-block;width:38px;height:38px;position:absolute;right:0px;top:-50px;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sprite_01.png) 0 0 no-repeat;background-position:-62px -238px}
+        #popup_all .btn_confirm{display:inline-block}
+        
+        #popup_bean_count .btn_confirm,
+        #popup_10min .btn_confirm,
+        #popup_end .btn_confirm,
+        #popup_already .btn_confirm,
+        #popup_login .btn_confirm{
+            width: 131px;
+            height: 41px;
+            background-color: #694bff;
+            color: #fff;
+            border-radius: 35px;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 52px;
+            letter-spacing: -0.28px;
+        }
+    
+        #popup_bean_count .in_layer_box{padding: 60px 0;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/popup_bean01.png) center top no-repeat;border-radius: 2px;text-align: center;display: flex;flex-direction: column;align-items: center;}
+        #popup_bean_count .information {position: absolute;top: 237px;left: 108px;display: flex;flex-direction: column;align-items: flex-start;}
+        #popup_bean_count .information p {font-size: 16px;font-weight: bold;font-stretch: normal;font-style: normal;line-height: 1.5;text-align: left;}
+        #popup_bean_count .information a {margin-top : 14px;}
+        
+        #popup_10min .in_layer_box{padding:50px 0;background-color:#fff;border-radius:2px;display: flex;flex-direction: column;align-items: center;}
+        #popup_10min .title{margin-bottom:30px;font-size:30px;color:#444;letter-spacing:-0.05em;font-weight:400}
+        #popup_10min .txt_01{margin-bottom:30px;font-size:20px;line-height:32px;color:#444;letter-spacing:-0.05em;font-weight:300}
+        #popup_10min .txt_01 span{color:#37af4b}
+        #popup_10min .txt_02{margin-bottom:30px;font-size:20px;line-height:32px;color:#444;letter-spacing:-0.05em;font-weight:300}
+        #popup_10min .btn_ask{margin-top:20px}
+        #popup_10min .btn_ask a{display:inline-block;font-size:16px;color:#444;letter-spacing:-0.025em}
+        
+        #popup_end .in_layer_box{padding: 60px 0;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/popup_end.png) center top no-repeat;border-radius: 2px;text-align: center;display: flex;flex-direction: column;align-items: center;}
+        #popup_end .txt_box{margin-bottom:20px;font-size:30px;color:#444;line-height:44px;letter-spacing:-0.05em}
+        
+        #popup_already .in_layer_box{padding: 60px 0;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/popup_already.png) center top no-repeat;border-radius: 2px;text-align: center;display: flex;flex-direction: column;align-items: center;}
+        #popup_already .txt_box{margin-bottom:20px;font-size:30px;color:#444;line-height:44px;letter-spacing:-0.05em}
+        
+        #popup_login .in_layer_box{padding: 60px 0;background:url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/popup_login.png) center top no-repeat;border-radius: 2px;text-align: center;display: flex;flex-direction: column;align-items: center;}
+        #popup_login .txt_box{margin-bottom:20px;font-size:30px;color:#444;line-height:44px;letter-spacing:-0.05em}
+        
+    </style>
+
+    <!-- // wing -->
+    <div id="wing">
+        <div class="inner_box">
+            <p class="blind">캠페인 참여 수</p>
+            <p class="count">
+                <strong id="total">100</strong>
+            </p>
+            <p class="person"><strong>명</strong></p>
+        </div>
+    </div>
+
+    <div id="campaign_wrap">
+        <div class="greener_wrap">
+
+            <!-- // #section_01 -->
+            <div id="section_01" class="sec1">
+                <div class="inner_box">
+                    <h1 class="logo">
+                        <a href="https://www.yuhan-kimberly.co.kr/" target="_blank" title="유한킴벌리">
+                            <span class="blind">유한킴벌리</span>
+                        </a>
+                    </h1>
+                    <p class="blind">유한킴벌리에게는 매일매일이 환경의 날 지구의 지구력을 높이는 숲 이야기를 확인해보세요!</p>
+                    <div class="video_box">
+                        <div id="player"></div>
+                    </div>
+
+                    <a href="#self" data-idx="1" class="btn_getbean">
+                        <span class="blind">영상 확인 후 콩 받기</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- // #section_02 -->
+            <div id="section_02" class="sec2">
+                <div class="inner_box">
+                    <div class="option_box">
+                        <div class="sustainable">
+                            <img class="sustainable_off" src="https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sustainable.png">
+                            <img class="sustainable_on" src="https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sustainable_on.png">
+                        </div>
+                        <div class="forest">
+                            <img class="forest_off" src="https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/forest.png">
+                            <img class="forest_on" src="https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/forest_on.png">
+                        </div>
+                        <div class="together">
+                            <img class="together_off" src="https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/together.png">
+                            <img class="together_on" src="https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/together_on.png">
+                        </div>
+                    </div>
+                    <a id="btn_getbean" class="btn_getbean" href="#self" data-idx="2" >
+                        <span class="blind">내용 확인 후 콩 받기</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- // #section_03 -->
+            <div id="section_03" class="sec3">
+                <div class="inner_box">
+                    <div class="option_box">
+                        <div class="reduce">
+                            <div class="arrow"></div>
+                        </div>
+                        <div class="recycle">
+                            <div class="arrow"></div>
+                        </div>
+                        <div class="replace">
+                            <div class="arrow"></div>
+                        </div>
+                    </div>
+
+                    <div class="vote_wrap">
+                        <div class="vote_area">
+                            <input type="radio" id="vote1" name="vote" class="vote_check">
+                            <label for="vote1" class="vote_title vote_01"><span class="title_txt"></span></label>
+                        </div>
+
+                        <div class="vote_area">
+                            <input type="radio" id="vote2" name="vote" class="vote_check">
+                            <label for="vote2" class="vote_title vote_02"><span class="title_txt"></span></label>
+                        </div>
+    
+                        <div class="vote_area">
+                            <input type="radio" id="vote3" name="vote" class="vote_check">
+                            <label for="vote3" class="vote_title vote_03"><span class="title_txt"></span></label>
+                        </div>
+                    </div>
+
+                    <div class="vote_select_text">
+                        <div class="graph_wrap">
+                            <div class="graph_list">
+                                <div class="column column01">
+                                    <div class="num">35%</div>
+                                    <div class="graph_bg">
+                                        <div class="graph_desc" style="width: 35%; height: 23px;"></div>
+                                    </div>
+                                </div>
+        
+                                <div class="column column02">
+                                    <div class="num">25%</div>
+                                    <div class="graph_bg">
+                                        <div class="graph_desc" style="width: 25%; height: 23px;"></div>
+                                    </div>
+                                </div>
+        
+                                <div class="column column03">
+                                    <div class="num">40%</div>
+                                    <div class="graph_bg">
+                                        <div class="graph_desc" style="width: 40%; height: 23px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a id="voteType" class="vote_btn btn_getbean" href="#self" data-idx="3" >
+                        <span class="blind">투표 확인 후 콩 받기</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- // #section_04 -->
+            <div id="section_04" class="sec4">
+                <div class="inner_box">
+                    <div class="swiper_wrap">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide img_01"><span class="blind">하기스 네이처메이드 오가닉 기저귀</span></div>
+                                <div class="swiper-slide img_02"><span class="blind">크리넥스 순수소프트 에코패키지 화장지</span></div>
+                                <div class="swiper-slide img_03"><span class="blind">크리넥스 에코그린 물티슈</span></div>
+                                <div class="swiper-slide img_04"><span class="blind">크리넥스 실크소프트 미용티슈</span></div>
+                                <div class="swiper-slide img_05"><span class="blind">리네이처 생리대</span></div>
+                                <div class="swiper-slide img_06"><span class="blind">크리넥스 KF94 컴포트핏 마스크</span></div>
+                                <div class="swiper-slide img_07"><span class="blind">크리넥스 버블버블 핸드워시 에코그린허브</span></div>
+                            </div>
+                        </div>
+                        <div class="control">
+                            <button type="button" class="btn_prev"><span class="blind">이전</span></button>
+                            <button type="button" class="btn_next"><span class="blind">다음</span></button>
+                        </div>
+                        <!-- <div class="swiper-pagination"></div> -->
+                    </div>
+                    
+                    <div class="greener_bg_btn">
+                        <a href="https://shopping.naver.com/plan/details/604429" target="_blank" title="그리너 프로덕트 기획전 구매하기"></a>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- // #section_05 -->
+            <div id="section_05" class="sec5">
+                <div class="inner_box">
+                    <a href="https://happybean.naver.com/donations/H000000183738" target="_blank"></a>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+
+            <!-- // #section_06 -->
+            <!-- <div id="section_06" class="sec6">
+                <div class="inner_box"></div>
+            </div> -->
+
+            <!-- // #section_07 -->
+            <div id="section_07" class="sec7">
+                <div class="inner_box">
+                    <ul class="live_broad">
+                        <li><a class="live_01" href="https://view.shoppinglive.naver.com/lives/524396" target="_blank" title="하기스">
+                            <img src="https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec7_bg01_hi.jpg" alt="하기스">
+                        </a></li>
+                        <li><a class="live_02" href="https://view.shoppinglive.naver.com/lives/530418" target="_blank" title="크리넥스">
+                            <img src="https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec7_bg01_kr.jpg" alt="크리넥스">
+                        </a></li>
+                        <li><a class="live_03" href="https://view.shoppinglive.naver.com/lives/543180" target="_blank" title="좋은느낌">
+                            <img src="https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec7_bg01_jo.jpg" alt="좋은느낌">
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- link -->
+            <div id="section_contents" class="contents">
+                <div class="inner_box">
+                    <span class="blind">유한킴벌리의 더 많은 소식과 활동을 확인해보세요!</span>
+                    <ul class="service">
+                        <li><a class="btn_service_yk" href="https://www.yuhan-kimberly.co.kr/" target="_blank" title="유한킴벌리" ></a></li>
+                        <li><a class="btn_service_ig" href="https://www.instagram.com/yk_woopoopoo/" target="_blank" title="인스타그램" ></a></li>
+                        <li><a class="btn_service_fb" href="https://www.facebook.com/ykwoopoopoo" target="_blank" title="페이스북" ></a></li>
+                        <li><a class="btn_service_yt" href=" https://www.youtube.com/channel/UC_o-SOYAy3IPl6LlTewa_SA" target="_blank" title="유튜브" ></a></li>
+                        <li><a class="btn_service_nb" href="https://blog.naver.com/yk-story" target="_blank" title="블로그" ></a></li>
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- // #section_sns -->
+            <div id="section_sns">
+                <div class="inner_box">
+                    <ul class="share">
+                        <li class="btn_band"><a href="#self" data-type="band"><span class="blind">밴드</span></a></li>
+                        <li class="btn_facebook"><a href="#self" data-type="facebook"><span class="blind">페이스북</span></a></li>
+                        <li class="btn_twitter"><a href="#self" data-type="twitter"><span class="blind">트위터</span></a></li>
+                        <li class="btn_kakaostory"><a href="#self" data-type="kakaostory"><span class="blind">카카오스토리</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- // #section_comment -->
+            <div id="section_comment">
+                <div class="inner_box">
+                    <div class="conts_box">
+                        <h2 class="blind">유한킴벌리 그리너 프로덕트 Greener Product와 함께 그리너 라이프 Greener Life 실천을 약속해 주세요!</h2>
+                        <p class="blind">댓글 참여하신 모든 분들께 콩 1개를 드립니다. 참여 기간 : 2022년 6월 05일 ~ 2022년 7월 04일 콩 지급일자 : 2022년 7월 8일 무성의,반복,악성댓글에는 콩이 지급되지 않습니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 콩 받기 팝업 -->
+            <div id="popup_all">    
+                <div id="popup_bean_count" class="pop" style="display:none; filter: alpha(opacity=0); opacity:0;">
+                    <div class="bg" onclick="layer_CLOSE('#popup_bean_count');"></div>
+                    <div class="out_layer_box">
+                        <div class="in_layer_box">
+                            <div class="information">
+                                <p class="tx_info"><span id="user_nick">해피빈</span>님의 보유 콩 개수 <br/><em id="user_amount">00</em> 개</p>
+							    <a href="http://happybean.naver.com/my/MyCongUsingDetailMain" target="_blank" title="새창으로 열기" class="btn_mypage">My해피빈 바로가기 ></a>
+                            </div>
+                            <button type="button" class="btn_confirm" onclick="layer_CLOSE('#popup_bean_count');">확인했어요!</button>
+                            <button type="button" class="btn_close" onclick="layer_CLOSE('#popup_bean_count');"><span
+                                    class="blind">창닫기</span></button>
+                        </div>
+                    </div>
+                </div>
+        
+
+                <!-- 콩 10분 제약 팝업 -->
+                <div id="popup_10min" class="pop" style="display:none; filter: alpha(opacity=0); opacity:0;">
+                    <div class="bg" onclick="layer_CLOSE('#popup_10min');"></div>
+                    <div class="out_layer_box">
+                        <div class="in_layer_box">
+                            <h2 class="title">캠페인에 참여해주셔서 감사합니다</h2>
+                            <p class="txt_01">해피빈에서는 보다 많은 네티즌을 대상으로 <br />
+                                캠페인 참여를 독려하고, 공익컨텐츠를 알리기 위해<br />
+                                <span>해피로그 ID참여 또는 정상적 접근이 아닌 경우 <br />
+                                    콩지급을 하지 않습니다.</span></p>
+                            <p class="txt_02">모두가 함께 만들어 가는 온라인 공익 캠페인 문화, <br />
+                                여러분의 협조를 부탁 드립니다.</p>
+                            <button type="button" class="btn_confirm" onclick="layer_CLOSE('#popup_10min');">확인했어요!</button>
+                            <div class="btn_ask"><a
+                                    href="https://help.naver.com/support/contents/contents.nhn?serviceNo=770&categoryNo=14109"
+                                    target="_blank">문의 : 해피빈고객센터</a></div>
+                            <button type="button" class="btn_close" onclick="layer_CLOSE('#popup_10min');"><span
+                                    class="blind">창닫기</span></button>
+                        </div>
+                    </div>
+                </div>
+        
+
+                <!-- 기부금 종료 팝업 -->
+                <div id="popup_end" class="pop" style="display:none; filter: alpha(opacity=0); opacity:0;">
+                    <div class="bg" onclick="layer_CLOSE('#popup_end');"></div>
+                    <div class="out_layer_box">
+                        <div class="in_layer_box">
+                            
+                            <button type="button" class="btn_confirm" onclick="layer_CLOSE('#popup_end');">확인했어요!</button>
+                            <button type="button" class="btn_close" onclick="layer_CLOSE('#popup_end');"><span
+                                    class="blind">창닫기</span></button>
+                        </div>
+                    </div>
+                </div>
+        
+
+                <!-- 기부금 이미참여 팝업 -->
+                <div id="popup_already" class="pop" style="display:none; filter: alpha(opacity=0); opacity:0;">
+                    <div class="bg" onclick="layer_CLOSE('#popup_already');"></div>
+                    <div class="out_layer_box">
+                        <div class="in_layer_box">
+                            
+                            <button type="button" class="btn_confirm" onclick="layer_CLOSE('#popup_already');">확인했어요!</button>
+                            <button type="button" class="btn_close" onclick="layer_CLOSE('#popup_already');"><span
+                                    class="blind">창닫기</span></button>
+                        </div>
+                    </div>
+                </div>
+        
+
+                <!-- 비로그인 팝업 -->
+                <div id="popup_login" style="display:none; filter: alpha(opacity=0); opacity:0;">
+                    <div class="bg" onclick="layer_CLOSE('#popup_login');"></div>
+                    <div class="out_layer_box">
+                        <div class="in_layer_box">
+                            
+                            <a href="#self" class="btn_confirm" onclick="goLogin();">로그인 하기!</a>
+                            <button type="button" class="btn_close" onclick="layer_CLOSE('#popup_login');"><span
+                                    class="blind">창닫기</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- sec2_popup -->
+        <div id="sec2_popup" class="sec2_popup">
+            <div class="sec2_popup_contents">
+                <div id="sec2_confirm" class="confirm_btn"></div>
+            </div>
+        </div>
+
+        <!-- sec3_popup -->
+        <div id="sec3_popup" class="sec3_popup">
+            <div class="sec3_popup_contents">
+                <img class="reduce" src="https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/reduce03_popup.png">
+                <img class="recycle" src="https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/recycle05_popup.png">
+                <img class="replace" src="https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/replace02_popup.png">
+                <div id="sec3_confirm" class="confirm_btn"></div>
+            </div>
+        </div>
+    
+
+        
+        </div><!-- // #popup_all -->
+    </div><!-- // #campaign_wrap -->
+
+    <script type="text/javascript">
+        var $J = jQuery.noConflict();
+        var domainUrl = window.location.protocol + "//" + window.location.host;
+        var isLocalStorageSupported = hbEvent.l_isLocalStorageSupport();
+
+        //레이어 오픈
+        var layer_OPEN = function (obj_selector){
+            var obj = $J(obj_selector);
+            obj.css({'display':'flex','opacity':0});
+            obj.css({'justify-content':'center'});
+            obj.css({'align-items':'center'});
+            obj.stop().animate({'opacity':1},200);
+        };
+
+        //레이어 클로즈
+        var layer_CLOSE = function (obj_selector){
+            var obj = $J(obj_selector);
+            obj.stop().animate({'opacity':0},200,function (){
+                $J(this).css({'display':'none'});
+            });
+        };
+
+        /* 로그인 */
+        var goLogin = function(){
+            if(hbApi.scopeVar.sectionIdx > 0){
+                if( isLocalStorageSupported ) {
+                    sessionStorage.setItem(hbApi.scopeVar.serviceId, hbApi.scopeVar.sectionIdx);
+                }
+            }
+            var targetUrl = domainUrl+"/campaign/greener2022";
+            document.location = "https://nid.naver.com/nidlogin.login?url="+encodeURIComponent(targetUrl);
+        };
+
+        /* 콩 받기 */
+        var getBean = function(idx){
+            hbApi.getBean(idx, null, function(res){
+                var result = res.result;
+                var code = result.result;
+                if (code == "SUCCESS") {
+                    $J("#user_nick").text(hbApi.nick);
+                    $J("#user_amount").text(result.holdingCongCount);
+                    layer_OPEN('#popup_success');
+                } else if(code == "NOTLOGIN") {
+                    layer_OPEN('#popup_login');
+                } else if(code == "END") {
+                    layer_OPEN('#popup_end');
+                } else if(code == "DUPLICATION") {
+                    layer_OPEN('#popup_already');
+                }
+            });
+        };
+
+        Number.prototype.getComma = function getComma()
+        {
+            var reg = /(^[+-]?\d+)(\d{3})/;		// 정규식
+            var num = this + '';				// 숫자를 문자열로 변환
+
+            while (reg.test(num)) {
+                num = num.replace(reg, '$1' + ',' + '$2');
+            }
+            return num;
+        }
+
+        var windowScrollTop = 0;
+        var wingArea = 0;
+        var mentoring = 0;
+
+        $J(function(){
+            windowScrollTop = $J(window).scrollTop() + $J(window).height();
+            wingArea = $J(".greener_wrap").offset().top + $J(".greener_wrap").height();
+
+            if(windowScrollTop > wingArea){
+                $J("#wing").fadeOut(200);
+            }else{
+                $J("#wing").fadeIn(200);
+            }
+
+            var option = {
+                serviceId: 'greener2022' //서비스 아이디
+                , notLoginObj: '#popup_login' //비로그인 팝업 obj
+                , fnDonationCallback: function (res) {
+                    $J("#section_contribution .total strong").text(res);
+                }
+            };
+
+            /* 과업 비로그인 , 중복 참여수 포함 */
+            var participant = {campaignNo : campaignNo, serviceIdList : []};
+            hbApi.getHistCnt(participant, function(res){
+                var taskCnt = res.result; // 총 과업 수
+
+                $J("#total").html(taskCnt);
+                numberCountingEffect('#total');
+            });
+
+            // 숫자카운터
+            var numberCountingEffect = function (tagID){
+                $J(tagID).each(function () {
+                    $J(this).prop('Counter',0).animate({ Counter: $J(this).text()}, {
+                        duration: 3000,
+                        easing: 'swing',
+                        step: function (now) {
+                            $J(this).text(Math.round(now).getComma());
+                        }
+                    });
+                });
+            };
+
+            /* 캠페인 초기화 */
+            hbApi.init(option, function (res) {
+                // 비로그인 참여
+                if (isLocalStorageSupported) {
+                    var sessionStorageVal = sessionStorage.getItem(hbApi.scopeVar.serviceId);
+                    if (sessionStorageVal != null) {
+                        hbApi.scopeVar.sectionIdx = sessionStorageVal;
+                        $J(document).scrollTop($J("#sec" + (Number(sessionStorageVal)+1)).offset().top);
+                        getBean(sessionStorageVal);
+                        // 삭제
+                        sessionStorage.removeItem(hbApi.scopeVar.serviceId);
+                    }
+                }
+            });
+
+            /*공유 */
+            Kakao.init("893d11da5c81ebc6ec67dc69f79ced44");
+            $J("#section_sns .share a").click(function(){
+                var og_tit    = $J("#ogTitle").attr("content");
+                var share_url = $J("#ogUrl").attr("content");
+                var img_url = $J("#ogImage").attr("content");
+                var gubun = $J(this).data("type");
+
+                if (gubun == "band") {
+                    hbEvent.sns().Band(share_url, og_tit);
+                } else if( gubun == "facebook") {
+                    hbEvent.sns().Facebook(share_url);
+                } else if( gubun == "twitter") {
+                    hbEvent.sns().Twitter(share_url, og_tit);
+                } else if( gubun == "kakaostory") {
+                    hbEvent.sns().KakaoStory(share_url, og_tit);
+                }
+            });
+
+            // custom
+            $J(".btn_getbean").click(function(){
+                if ( $J(this).is("[activated]") != true ) {
+                    return false;
+                }
+                getBean($J(this).data("idx"));
+                return false;
+            });
+
+            // section 2 popup
+            var sec_popup_count = 0;
+            var product_count = 0;
+            var forest_count = 0;
+            var people_count = 0;
+            var confirm_btn = document.getElementById("sec2_confirm");
+
+            $J("#section_02 .inner_box .option_box .sustainable").click(function() {
+                if (product_count === 0) {
+                    product_count++;
+                    sec_popup_count++;
+                    $J("#sec2_popup").css("display","block");
+                    $J("#sec2_popup .sec2_popup_contents").css("background","url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sustainable_confirm.png)");
+
+                    confirm_btn.addEventListener("click", function() {
+                        $J("#sec2_popup").css("display","none");
+                        $J(".greener_wrap .sec2 .inner_box .option_box .sustainable .sustainable_off").css("display","none");
+                        $J(".greener_wrap .sec2 .inner_box .option_box .sustainable .sustainable_on").css("display","block");
+                        sec2_Count();
+                    });
+                } else {
+                }                
+            });
+
+            $J("#section_02 .inner_box .option_box .forest").click(function() {
+                if (forest_count === 0) {
+                    forest_count++;
+                    sec_popup_count++;
+                    $J("#sec2_popup").css("display","block");
+                    $J("#sec2_popup .sec2_popup_contents").css("background","url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/forest_confirm.png)");
+
+                    confirm_btn.addEventListener("click", function() {
+                        $J("#sec2_popup").css("display","none");
+                        $J(".greener_wrap .sec2 .inner_box .option_box .forest .forest_off").css("display","none");
+                        $J(".greener_wrap .sec2 .inner_box .option_box .forest .forest_on").css("display","block");
+                        sec2_Count();
+                    });
+                } else {
+                }                
+            });
+
+            $J("#section_02 .inner_box .option_box .together").click(function() {
+                if (people_count === 0) {
+                    people_count++;
+                    sec_popup_count++;
+                    $J("#sec2_popup").css("display","block");
+                    $J("#sec2_popup .sec2_popup_contents").css("background","url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/together_confirm.png)");
+
+                    confirm_btn.addEventListener("click", function() {
+                        $J("#sec2_popup").css("display","none");
+                        $J(".greener_wrap .sec2 .inner_box .option_box .together .together_off").css("display","none");
+                        $J(".greener_wrap .sec2 .inner_box .option_box .together .together_on").css("display","block");
+                        sec2_Count();
+                    });
+                } else {
+                }                
+            });
+            var sec2_Count = function () {
+                if(sec_popup_count === 1) {
+                    console.log(sec_popup_count);
+                    $J(".greener_wrap .sec2").css("background","url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec2_bg02_type2.png) center top no-repeat");
+                } else if (sec_popup_count === 2) {
+                    console.log(sec_popup_count);
+                    $J(".greener_wrap .sec2").css("background","url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec2_bg02_type3.png) center top no-repeat");
+                } else if (sec_popup_count === 3) {
+                    console.log(sec_popup_count);
+                    $J(".sec2 .btn_getbean").attr("activated", true);
+                    $J(".greener_wrap .sec2").css("background","url(https://ssl.pstatic.net/happyimg2/image/event/campaign/202205/greener2022/pc/sec2_bg02_type4.png) center top no-repeat");
+                }
+            }
+
+
+            // section 3 popup
+            var confirm_btn2 = document.getElementById("sec3_confirm");
+            $J("#section_03 .inner_box .option_box .reduce").click(function() {
+                $J("#sec3_popup").css("display","flex");
+                $J("#sec3_popup .sec3_popup_contents .reduce").css("display","block");
+                $J(".greener_wrap .sec3 .inner_box .option_box .reduce .arrow").css("display","none");
+ 
+                confirm_btn2.addEventListener("click", function() {
+                    $J("#sec3_popup .sec3_popup_contents .reduce").css("display","none");
+                    $J("#sec3_popup").css("display","none");
+                    
+                });            
+            });
+
+            $J("#section_03 .inner_box .option_box .recycle").click(function() {
+                $J("#sec3_popup").css("display","flex");
+                $J("#sec3_popup .sec3_popup_contents .recycle").css("display","block");
+                $J(".greener_wrap .sec3 .inner_box .option_box .recycle .arrow").css("display","none");
+ 
+                confirm_btn2.addEventListener("click", function() {
+                    $J("#sec3_popup .sec3_popup_contents .recycle").css("display","none");
+                    $J("#sec3_popup").css("display","none");
+                });            
+            });
+
+            $J("#section_03 .inner_box .option_box .replace").click(function() {
+                $J("#sec3_popup").css("display","flex");
+                $J("#sec3_popup .sec3_popup_contents .replace").css("display","block");
+                $J(".greener_wrap .sec3 .inner_box .option_box .replace .arrow").css("display","none");
+ 
+                confirm_btn2.addEventListener("click", function() {
+                    $J("#sec3_popup .sec3_popup_contents .replace").css("display","none");
+                    $J("#sec3_popup").css("display","none");
+                });            
+            });
+
+        
+            $J('#voteType').click(function () {
+                let voteObject;
+                $J('.vote_check').each(function () {
+                    if ($J(this).prop('checked')) {
+                        let checkedVote = $J(this).attr('id');
+                        voteObject = checkedVote.slice(checkedVote.length - 1, checkedVote.length)
+                        return false;
+                    }
+                });
+    
+                hbApi.setPoll([voteObject], function (res) {
+                    getBean(1);
+                    setPollRatio();
+                });
+            });
+
+            
+
+            function setPollRatio() {
+                $J('.column .graph_desc').each(function(percent){
+                    $J(this).css('width','0%');
+                });
+    
+                $J('.column .num').text('0%');
+    
+                hbEvent.ajaxGetHelper('/campaign-service/campaign/poll/count/ratio', {campaignNo: campaignNo}, null, function (res) {
+                    res.result.forEach(function (pollRatio) {
+                        console.log(pollRatio);
+                        $J('.column0' + pollRatio.pollItem + ' .graph_desc').css('width', pollRatio.pollRatio + '%');
+                        $J('.column0' + pollRatio.pollItem + ' .num').text(Math.round(pollRatio.pollRatio) + '%');
+                    });
+                });
+            }
+
+            setPollRatio();
+
+            // 투표하기 체크하면 버튼 활성화
+            $J('.vote_check').click(function(){
+                $J('.sec3 .btn_getbean').attr('activated', true);
+            });
+            
+        });
+
+        $J(window).scroll(function(){
+            windowScrollTop = $J(window).scrollTop() + $J(window).height();
+            wingArea = $J(".greener_wrap").offset().top + $J(".greener_wrap").height();
+
+            if(windowScrollTop > wingArea){
+                $J("#wing").fadeOut(200);
+            }else{
+                $J("#wing").fadeIn(200);
+            }
+        });
+
+        var tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        function onYouTubeIframeAPIReady(fileName) {
+            var player = new YT.Player('player', {
+                height: '100%',
+                width: '100%',
+                videoId: 'mOXf4J7u7DM',
+                playerVars: {
+                    showinfo: 0,
+                    modestbranding: 0,
+                    controls: 0,
+                    rel : 0
+                },
+                events: {
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+        function onPlayerStateChange(event) {
+            if(event.data === 0) {
+                $J(".sec1 .btn_getbean").attr("activated", true);
+            }
+        }
+        
+        var contribution_swiper = new Swiper('#section_04 .swiper-container', {
+            slidesPerView : 4,
+            loop: false,
+            pagination: {
+                el: "#section_04 .swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: "#section_04 .btn_next",
+                prevEl: "#section_04 .btn_prev",
+            },
+        });
+
+    </script>
+
+</body>
+</html>
